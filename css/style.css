@@ -4,6 +4,7 @@
   --footer-height: 70px;
 
   /* palette colori */
+  --button-color: #0d6efd;
   --main-bg-color: #7fffd5;
   --clicked-bg-color: rgb(213, 33, 63);
 }

@@ -88,3 +88,13 @@ function generateCell(index) {
 
   return cell;
 }
+
+function generateGridAdaptive(container) {
+  container.innerHTML = "";
+
+  for (let i = 1; i <= difficultyValue; i++) {
+    const cellElement = generateCell(i);
+
+    container.append(cellElement);
+  }
+}
