@@ -15,11 +15,11 @@ const hard = parseInt(hardLevel.value);
 
 // ## Alla pressione del tasto Play
 playElement.addEventListener("click", function () {
-  generateGrid(containerElement);
+  generateGridAdaptive(containerElement);
 });
 
 // ## ALLA SCELTA DELLA DIFFICOLTA'
-let difficultyValue = 10;
+let difficultyValue;
 
 easyLevel.addEventListener("click", function () {
   difficultyValue = easy;

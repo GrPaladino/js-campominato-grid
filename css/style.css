@@ -38,7 +38,7 @@ header .btn {
   flex-wrap: wrap;
 }
 
-.cell-10 {
+.cell-100 {
   height: calc(100% / 10);
   width: calc(100% / 10);
   border: 2px solid black;

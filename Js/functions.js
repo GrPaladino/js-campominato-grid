@@ -65,7 +65,7 @@ function moltiplica(primoFattore, secondoFattore) {
   return risultato;
 }
 
-// ## GENERA UNA GRIGLIA
+// ## GENERA UNA GRIGLIA ON LOAD
 function generateGrid(container) {
   container.innerHTML = "";
 
@@ -75,10 +75,10 @@ function generateGrid(container) {
   }
 }
 
-// ## GENERA CELLA NUMERATA
+// ## GENERA CELLA NUMERATA ON LOAD
 function generateCell(index) {
   const cell = document.createElement("div");
-  cell.classList.add("cell-10");
+  cell.classList.add("cell-100");
   cell.innerText = index;
 
   cell.addEventListener("click", function () {
@@ -89,12 +89,27 @@ function generateCell(index) {
   return cell;
 }
 
+// ## GENERA CELLA NUMERATA ADAPTIVE
 function generateGridAdaptive(container) {
   container.innerHTML = "";
 
   for (let i = 1; i <= difficultyValue; i++) {
-    const cellElement = generateCell(i);
+    const cellElement = generateCellAdaptive(i);
 
     container.append(cellElement);
   }
+}
+
+// ## GENERA UNA GRIGLIA ADAPTIVE
+function generateCellAdaptive(index) {
+  const cell = document.createElement("div");
+  cell.classList.add("cell-" + difficultyValue);
+  cell.innerText = index;
+
+  cell.addEventListener("click", function () {
+    this.classList.toggle("active");
+    console.log(index);
+  });
+
+  return cell;
 }
