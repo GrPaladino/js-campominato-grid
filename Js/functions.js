@@ -69,7 +69,7 @@ function moltiplica(primoFattore, secondoFattore) {
 function generateGrid(container) {
   container.innerHTML = "";
 
-  for (let i = 0; i < 64; i++) {
+  for (let i = 1; i <= 100; i++) {
     const cellElement = generateCell(i);
     container.append(cellElement);
   }
@@ -78,24 +78,13 @@ function generateGrid(container) {
 // ## GENERA CELLA NUMERATA
 function generateCell(index) {
   const cell = document.createElement("div");
-  cell.classList.add("box");
-  cell.setAttribute("data-index", index);
+  cell.classList.add("cell-10");
+  cell.innerText = index;
 
   cell.addEventListener("click", function () {
-    const number = parseInt(this.getAttribute("data-index"));
-
-    if (number % 2 === 0) {
-      this.classList.toggle("even");
-    } else {
-      this.classList.toggle("odd");
-    }
+    this.classList.toggle("active");
+    console.log(index);
   });
-
-  if (this.classList.contains("even") || this.classList.contains("odd")) {
-    this.innerTex = number;
-  } else {
-    this.innerTex = "";
-  }
 
   return cell;
 }

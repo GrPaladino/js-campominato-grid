@@ -37,7 +37,9 @@ header .btn {
   flex-wrap: wrap;
 }
 
-.cell {
+.cell-10 {
+  height: calc(100% / 10);
+  width: calc(100% / 10);
   border: 2px solid black;
   color: black;
 
@@ -46,19 +48,26 @@ header .btn {
   align-items: center;
 }
 
-.cell-10 {
-  height: calc(100% / 10);
-  width: calc(100% / 10);
-}
-
 .cell-81 {
   height: calc(100% / 9);
   width: calc(100% / 9);
+  border: 2px solid black;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cell-49 {
   height: calc(100% / 7);
   width: calc(100% / 7);
+  border: 2px solid black;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .active {
