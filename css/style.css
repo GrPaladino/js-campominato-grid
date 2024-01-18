@@ -1,7 +1,66 @@
+/* CUSTOM PROPS */
+:root {
+  --header-height: 85px;
+  --footer-height: 70px;
+
+  /* palette colori */
+  --main-bg-color: #7fffd5;
+  --clicked-bg-color: rgb(213, 33, 63);
+}
+
 header .logo {
   min-width: 300px;
 }
 
 header .btn {
-  padding: 5px 20px;
+  padding: 3px 20px;
+}
+
+.wrapper {
+  height: calc(100vh - var(--footer-height) - var(--header-height));
+  background-color: var(--main-bg-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  border: 2px solid black;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 2px solid black;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-10 {
+  height: calc(100% / 10);
+  width: calc(100% / 10);
+}
+
+.cell-81 {
+  height: calc(100% / 9);
+  width: calc(100% / 9);
+}
+
+.cell-49 {
+  height: calc(100% / 7);
+  width: calc(100% / 7);
+}
+
+.active {
+  background-color: var(--clicked-bg-color);
 }
