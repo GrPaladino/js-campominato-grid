@@ -80,17 +80,26 @@ function generateGrid(container) {
 // ## GENERA UNA GRIGLIA ADAPTIVE
 function generateCellAdaptive(index) {
   const cell = document.createElement("div");
+
   cell.classList.add("cell-" + difficultyValue);
   cell.setAttribute("data-index", index);
 
   cell.addEventListener("click", function () {
-    this.innerText = index;
+    if (!isGameOver) {
+      this.innerText = index;
 
-    if (myArrayBomb.includes(index)) {
-      this.classList.toggle("fail");
-      alert("Hai perso");
-    } else {
-      this.classList.toggle("win");
+      if (myArrayBomb.includes(index)) {
+        this.classList.toggle("fail");
+        alert("Hai perso!!! Ritenta");
+        isGameOver = true;
+      } else {
+        this.classList.toggle("win");
+        score++;
+        if (score == difficultyValue - myArrayBomb.length) {
+          alert("Hai vinto!!!!!");
+          isGameOver = true;
+        }
+      }
     }
   });
 

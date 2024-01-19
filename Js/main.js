@@ -14,9 +14,13 @@ const hard = parseInt(hardLevel.value);
 let difficultyValue = easy;
 generateGrid(containerElement);
 
+// ## VARIABILE GAMEOVER
+let isGameOver = false;
+
 // ## Alla pressione del tasto Play
 playElement.addEventListener("click", function () {
   generateGrid(containerElement);
+  isGameOver = false;
 });
 
 // ## ALLA SCELTA DELLA DIFFICOLTA'
@@ -25,18 +29,21 @@ easyLevel.addEventListener("click", function () {
   difficultyValue = easy;
   console.log(difficultyValue);
   generateGrid(containerElement);
+  isGameOver = false;
 });
 
 mediumLevel.addEventListener("click", function () {
   difficultyValue = medium;
   console.log(difficultyValue);
   generateGrid(containerElement);
+  isGameOver = false;
 });
 
 hardLevel.addEventListener("click", function () {
   difficultyValue = hard;
   console.log(difficultyValue);
   generateGrid(containerElement);
+  isGameOver = false;
 });
 
 // ## CREAZIONE ARRAY DI BOMBE
@@ -57,3 +64,6 @@ if (offset > elementsNumber) {
   }
   console.table(myArrayBomb);
 }
+
+// ## CONTEGGIO DELLE CASELLE CLICCATE
+let score = 0;
