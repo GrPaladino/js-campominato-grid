@@ -38,3 +38,21 @@ hardLevel.addEventListener("click", function () {
   console.log(difficultyValue);
   generateGrid(containerElement);
 });
+
+const myArrayBomb = [];
+
+const min = 1;
+const max = difficultyValue;
+const offset = max - min;
+const elementsNumber = 16;
+
+if (offset > elementsNumber) {
+  while (myArrayBomb.length < 16) {
+    let generateNumber = getRandomNumber(1, difficultyValue);
+
+    if (!myArrayBomb.includes(generateNumber)) {
+      myArrayBomb.push(generateNumber);
+    }
+  }
+  console.table(myArrayBomb);
+}
