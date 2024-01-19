@@ -84,18 +84,13 @@ function generateCellAdaptive(index) {
   cell.setAttribute("data-index", index);
 
   cell.addEventListener("click", function () {
-    const number = parseInt(this.getAttribute("data-index"));
+    this.innerText = index;
 
-    if (number % 2 == 0) {
-      this.classList.toggle("even");
+    if (myArrayBomb.includes(index)) {
+      this.classList.toggle("fail");
+      alert("Hai perso");
     } else {
-      this.classList.toggle("odd");
-    }
-
-    if (this.classList.contains("even") || this.classList.contains("odd")) {
-      this.innerText = number;
-    } else {
-      this.innerText = "";
+      this.classList.toggle("win");
     }
   });
 

@@ -39,6 +39,7 @@ hardLevel.addEventListener("click", function () {
   generateGrid(containerElement);
 });
 
+// ## CREAZIONE ARRAY DI BOMBE
 const myArrayBomb = [];
 
 const min = 1;
