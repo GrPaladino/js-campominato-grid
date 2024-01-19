@@ -19,7 +19,7 @@ playElement.addEventListener("click", function () {
 });
 
 // ## ALLA SCELTA DELLA DIFFICOLTA'
-let difficultyValue;
+let difficultyValue = easy;
 
 easyLevel.addEventListener("click", function () {
   difficultyValue = easy;
