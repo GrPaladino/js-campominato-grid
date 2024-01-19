@@ -65,32 +65,8 @@ function moltiplica(primoFattore, secondoFattore) {
   return risultato;
 }
 
-// ## GENERA UNA GRIGLIA ON LOAD
-function generateGrid(container) {
-  container.innerHTML = "";
-
-  for (let i = 1; i <= 100; i++) {
-    const cellElement = generateCell(i);
-    container.append(cellElement);
-  }
-}
-
-// ## GENERA CELLA NUMERATA ON LOAD
-function generateCell(index) {
-  const cell = document.createElement("div");
-  cell.classList.add("cell-100");
-  cell.innerText = index;
-
-  cell.addEventListener("click", function () {
-    this.classList.toggle("active");
-    console.log(index);
-  });
-
-  return cell;
-}
-
 // ## GENERA CELLA NUMERATA ADAPTIVE
-function generateGridAdaptive(container) {
+function generateGrid(container) {
   container.innerHTML = "";
 
   for (let i = 1; i <= difficultyValue; i++) {
@@ -104,11 +80,22 @@ function generateGridAdaptive(container) {
 function generateCellAdaptive(index) {
   const cell = document.createElement("div");
   cell.classList.add("cell-" + difficultyValue);
-  cell.innerText = index;
+  cell.setAttribute("data-index", index);
 
   cell.addEventListener("click", function () {
-    this.classList.toggle("active");
-    console.log(index);
+    const number = parseInt(this.getAttribute("data-index"));
+
+    if (number % 2 == 0) {
+      this.classList.toggle("even");
+    } else {
+      this.classList.toggle("odd");
+    }
+
+    if (this.classList.contains("even") || this.classList.contains("odd")) {
+      this.innerText = number;
+    } else {
+      this.innerText = "";
+    }
   });
 
   return cell;

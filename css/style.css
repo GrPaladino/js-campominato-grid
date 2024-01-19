@@ -6,7 +6,8 @@
   /* palette colori */
   --button-color: #0d6efd;
   --main-bg-color: #7fffd5;
-  --clicked-bg-color: rgb(213, 33, 63);
+  --even-bg-color: rgb(213, 33, 63);
+  --odd-gb-color: #f7d716;
 }
 
 header .logo {
@@ -47,6 +48,7 @@ header .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .cell-81 {
@@ -58,6 +60,7 @@ header .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .cell-49 {
@@ -69,8 +72,13 @@ header .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.active {
-  background-color: var(--clicked-bg-color);
+.even {
+  background-color: var(--even-bg-color);
+}
+
+.odd {
+  background-color: var(--odd-gb-color);
 }
