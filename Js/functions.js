@@ -90,7 +90,7 @@ function generateCellAdaptive(index) {
 
       if (myArrayBomb.includes(index)) {
         this.classList.add("fail");
-        alert("Hai perso!!! Ritenta");
+        alert("Hai perso!!1 Il tuo punteggio é: " + score);
 
         const allCells = document.getElementsByClassName(
           "cell-" + difficultyValue
@@ -109,7 +109,7 @@ function generateCellAdaptive(index) {
         this.classList.add("win");
         score++;
         if (score == difficultyValue - myArrayBomb.length) {
-          alert("Hai vinto!!!!!");
+          alert("Hai vinto!!!!! Il tuo punteggio  é: " + score);
           isGameOver = true;
         }
       }
