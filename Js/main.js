@@ -55,15 +55,15 @@ const offset = max - min;
 const elementsNumber = 16;
 
 if (offset > elementsNumber) {
-  while (myArrayBomb.length < 16) {
+  while (myArrayBomb.length < elementsNumber) {
     let generateNumber = getRandomNumber(1, difficultyValue);
 
     if (!myArrayBomb.includes(generateNumber)) {
       myArrayBomb.push(generateNumber);
     }
   }
-  console.table(myArrayBomb);
 }
+console.table(myArrayBomb);
 
 // ## CONTEGGIO DELLE CASELLE CLICCATE
 let score = 0;

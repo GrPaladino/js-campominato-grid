@@ -89,11 +89,24 @@ function generateCellAdaptive(index) {
       this.innerText = index;
 
       if (myArrayBomb.includes(index)) {
-        this.classList.toggle("fail");
+        this.classList.add("fail");
         alert("Hai perso!!! Ritenta");
+
+        const allCells = document.getElementsByClassName(
+          "cell-" + difficultyValue
+        );
+        for (let i = 0; i < allCells.length; i++) {
+          const cell = allCells[i];
+          const cellIndex = parseInt(cell.getAttribute("data-index"));
+          if (myArrayBomb.includes(cellIndex)) {
+            cell.classList.add("fail");
+            cell.innerText = cellIndex;
+          }
+        }
+
         isGameOver = true;
       } else {
-        this.classList.toggle("win");
+        this.classList.add("win");
         score++;
         if (score == difficultyValue - myArrayBomb.length) {
           alert("Hai vinto!!!!!");
