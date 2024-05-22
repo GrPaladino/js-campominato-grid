@@ -30,3 +30,11 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 - alla pressione del tasto dovrò generare una griglia con le celle
 - al click sulla cella, la cella si colora di azzurro e stampo in console il numero della cella cliccata
 - applico gli eventuali bonus
+
+### Screen
+
+![screen1](/img/untitled.png)
+
+![screen2](/img/screen.png)
+
+![screen2](/img/screenshot.jpg)
